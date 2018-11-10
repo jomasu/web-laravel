@@ -9,12 +9,14 @@
 
     <!-- code CSS-->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<!--<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">-->
     <link href="{{ asset('css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{ asset('css/price-range.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+	<script src="{{ asset('js/app.js') }}" defer></script>
 
     
     
@@ -36,9 +38,9 @@
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fab fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -51,7 +53,7 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/tfire.png" alt="" /></a>
+							<a href="index.html"><img src="{{ asset('img/home/tfire.png') }} " alt="" /></a>
 						</div>
 					</div>
 					<div class="col-md-8 clearfix">
@@ -61,7 +63,30 @@
 								<li><a href=""><i class="fa fa-star"></i> Mi lista</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Salir</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Ingresar</a></li>
+
+							  @if (Route::has('login'))
+								  @auth
+								<li class="dropdown"><a ><i class="fa fa-lock"></i> Bienvenido <span class="name-user">{{ Auth::user()->name }}</span></a>
+								<ul role="menu" class="sub-menu">
+										<li ><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+									</a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+								</li>
+									</ul>
+								</li>
+								 @else
+								 <li><a href="{{ route('login') }}">Login</a></li>
+								 @endauth
+							@endif
+
+							
+
+
 							</ul>
 						</div>
 					</div>
@@ -87,9 +112,9 @@
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Productos</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
+										<li><a href="product-details.html">Detalles de productos</a></li> 
 										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
+										<li><a href="cart.html">Carrito</a></li> 
 										<li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 
@@ -99,7 +124,7 @@
 										<li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
                                 </li> 
-								<li><a href="404.html">404</a></li>
+								<!--<li><a href="404.html">404</a></li>-->
 								<li><a href="contact-us.html">Sucursales</a></li>
 							</ul>
 						</div>

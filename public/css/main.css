@@ -198,7 +198,7 @@ a#scrollUp i {
 }
 
 .shop-menu ul li a {
-    background: #FFFFFF;
+    /*background: #FFFFFF;*/
     color: #696763;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -1417,7 +1417,7 @@ h2.title {
 #form {
     display: block;
     margin-bottom: 185px;
-    margin-top: 185px;
+    margin-top: 50px;
     overflow: hidden;
 }
 
@@ -1443,11 +1443,11 @@ h2.title {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 300;
-    height: 40px;
+    /*height: 40px;*/
     margin-bottom: 10px;
     outline: medium none;
     padding-left: 10px;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .login-form form span {
@@ -1499,7 +1499,10 @@ h2.title {
     text-align: center;
     width: 50px;
 }
-
+.name-user{
+    color:#FE980F;
+    font-weight: bold;
+}
 
 /*************************
 *******Cart CSS******
