@@ -156,12 +156,14 @@
 
 
 <!-- code javascript-->
+
 <script src="{{ asset('js/jquery.js') }}" defer></script>
 <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
 <script src="{{ asset('js/jquery.scrollUp.min.js') }}" defer></script>
 <script src="{{ asset('js/price-range.js') }}" defer></script>
 <script src="{{ asset('js/jquery.prettyPhoto.js') }}" defer></script>
 <script src="{{ asset('js/main.js') }}" defer></script>
+<script src="{{ asset('js/preview.js') }}" defer></script>
 
 
 </body>
