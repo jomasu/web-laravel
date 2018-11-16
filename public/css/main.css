@@ -1,4 +1,4 @@
-﻿/*************************
+/*************************
 *******Typography******
 **************************/
 
@@ -262,7 +262,7 @@ a#scrollUp i {
     outline: medium none;
     padding-left: 10px;
     width: 155px;
-    background-image: url(../images/home/searchicon.png);
+    background-image: url(../img/home/searchicon.png);
     background-repeat: no-repeat;
     background-position: 130px;
 }
@@ -333,13 +333,25 @@ ul.sub-menu {
     }
 }
 .preview-img{
-    width:20em;
+    width:100%;
     height:25em;
-    background-color:rgb(221, 221, 221); 
+    background-image:url(../img/home/img.jpg);
+	background-size:cover;
+	background-position: center;
+	z-index:999;
+}
+
+.preview-img2{
+    width:20%;
+    height:5em;
+    background-image:url(../img/home/img.jpg);
+	background-size:cover;
+	background-position: center;
+	z-index:999;
 }
 
 
-#file-input {
+#file-input, #file-input2 {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -349,6 +361,7 @@ ul.sub-menu {
     }
 
 label[for="file-input"] {
+	
         font-size: 14px;
         font-weight: 600;
         color: #fff;
@@ -358,7 +371,7 @@ label[for="file-input"] {
         cursor: pointer;
         padding: 15px 40px !important;
         text-transform: uppercase;
-        width: fit-content;
+        width: 100%;
         text-align: center;
         }
 /*************************

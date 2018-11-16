@@ -11,10 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+   /* public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
 
     /**
      * Show the application dashboard.
@@ -24,5 +24,61 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+	
+	  /**
+
+     * Create a new controller instance.
+
+     *
+
+     * @return void
+
+     */
+
+    public function imagesUpload()
+
+    {
+
+        return view('imagesUpload');
+
+    }
+
+
+
+    /**
+
+     * Create a new controller instance.
+
+     *
+
+     * @return void
+
+     */
+
+    public function imagesUploadPost(Request $request)
+
+    {
+
+        request()->validate([
+
+            'uploadFile' => 'required',
+
+        ]);
+
+
+
+        foreach ($request->file('uploadFile') as $key => $value) {
+
+            $imageName = time(). $key . '.' . $value->getClientOriginalExtension();
+
+            $value->move(public_path('img'), $imageName);
+
+        }
+
+
+
+        return response()->json(['success'=>'Las imagenes se cargaron correctamente.']);
+	
     }
 }
