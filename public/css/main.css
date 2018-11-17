@@ -1,4 +1,4 @@
-/*************************
+﻿/*************************
 *******Typography******
 **************************/
 
@@ -342,7 +342,7 @@ ul.sub-menu {
 }
 
 .preview-img2{
-    width:20%;
+    width:100%;
     height:5em;
     background-image:url(../img/home/img.jpg);
 	background-size:cover;
@@ -351,7 +351,7 @@ ul.sub-menu {
 }
 
 
-#file-input, #file-input2 {
+#file-input, #file-input2, #file-input3, #file-input4 , #file-input5 {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;

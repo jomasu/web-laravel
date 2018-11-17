@@ -6,13 +6,11 @@
 
 <div class="container">
 
-<form class="form-group dropzone" id="my-awesome-dropzone" action="" method="get">
+<form class="form-group"  action="" method="get">
 <div class="col-sm-4 col-sm-offset-1 login-form">
 <h3><i class="fas fa-box-open"></i>&nbsp;Agregar Nuevo Producto</h3>
 
-	<div class="fallback">
-    	<input name="file" type="file" multiple />
- 	</div>	
+	
 	
 <div class="custom-file">
   
@@ -26,18 +24,19 @@
 	
 </div>
 	
-	<div class="custom-file">
+
+@for ($i = 2; $i <= 5; $i++)
+
+<div class="custom-file col-sm-3">
   
-		<input name="file-input" id="file-input2" type="file" />
+	<input name="file-input{{$i}}" id="file-input{{$i}}" type="file" />
   
-   
-	 <br>
-	<label class="custom-file-label preview-img2" for="file-input2"> <img id="imgSalida2" width="100%" height="100%" src="" /></label>	
+    <br>
+	<label class="custom-file-label preview-img2" for="file-input{{$i}}"> <img id="imgSalida{{$i}}" width="100%" height="100%" src="" /></label>	
 	
-	</div>
+</div>
+@endfor	
 	
-	
-<br>
 </div>
 
 
