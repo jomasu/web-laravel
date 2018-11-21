@@ -17,9 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::view('/', 'home')->middleware('auth');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/agregar', 'addProductController@index')->name('agregar');
 Route::get('/inicio', 'InicioController@index')->name('inicio');
 Route::get('images-upload', 'HomeController@imagesUpload');
 Route::post('images-upload', 'HomeController@imagesUploadPost')->name('images.upload');
 
+Route::get('/agregar', 'addProductController@index')->name('agregar')->middleware('auth:admin');
