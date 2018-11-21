@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Shop;
+use App\Product;
 
-class addProductController extends Controller
+class ShopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,8 @@ class addProductController extends Controller
      */
     public function index()
     {
-        return view('agregarproducto');
+        $products = Product::inRandomOrder()->take(12)->get();
+        return view('shop')->with('products', $products);
     }
 
     /**
@@ -45,7 +48,8 @@ class addProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::where('id',$id)->firstOrFail();
+        return view('product')->with('product', $product);
     }
 
     /**

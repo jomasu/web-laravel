@@ -18,8 +18,22 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'ProductController@index');
+Route::get('/shop', 'ShopController@index')->name('shop');
+Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
+//Route::get('/', 'CategorieController@index');
+
+
+
+Route::get('/brand/{$id}','brandController@show')->name('brand');
 Route::get('/agregar', 'addProductController@index')->name('agregar');
 Route::get('/inicio', 'InicioController@index')->name('inicio');
+Route::view('/carrito','cart');
+Route::view('/checkout','checkout');
+Route::view('/productos','productos');
+Route::view('/producto','producto');
+Route::view('/gracias','gracias');
 Route::get('images-upload', 'HomeController@imagesUpload');
 Route::post('images-upload', 'HomeController@imagesUploadPost')->name('images.upload');
 

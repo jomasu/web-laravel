@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
-						<h2>Login to your account</h2>
+						<h2>Ingresa con tu cuenta</h2>
 						<form method="POST" action="{{ route('login') }}">
                         @csrf
                         <input for="email" id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}" required autofocus/>
@@ -53,7 +53,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
-						<h2>New User Signup!</h2>
+						<h2>Crear Nuevo Usuario</h2>
                         <form method="POST" action="{{ route('register') }}">
                         @csrf
                             <input  id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="{{ __('Name') }}"/>
@@ -89,7 +89,7 @@
                            
 
 
-							<button type="submit" class="btn btn-default">Signup</button>
+							<button type="submit" class="btn btn-default">Ingresar</button>
 						</form>
 					</div><!--/sign up form-->
 				</div>

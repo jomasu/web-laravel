@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Categorie;
 use App\Product;
 
-class InicioController extends Controller
+class CategorieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class InicioController extends Controller
      */
     public function index()
     {
-        return view('inicio');
+        $categories = Categorie::inRandomOrder()->take(9)->get();
+        return view('inicio')->with('categories', $categories);
     }
 
     /**
@@ -24,7 +25,8 @@ class InicioController extends Controller
      */
     public function create()
     {
-        //
+
+        
     }
 
     /**
@@ -35,7 +37,8 @@ class InicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+       
     }
 
     /**
@@ -46,7 +49,8 @@ class InicioController extends Controller
      */
     public function show($id)
     {
-        //
+       $categorie = Post::find($id);
+       return view('categorie.show')->with('categorie',$categorie);
     }
 
     /**
@@ -57,7 +61,8 @@ class InicioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categorie = Post::find($id);
+        return view('categorie.edit')->with('categorie',$categorie);
     }
 
     /**
@@ -69,7 +74,7 @@ class InicioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categorie = Post::find($id);
     }
 
     /**
@@ -80,6 +85,7 @@ class InicioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+        return redirect('/catagories');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 
-class InicioController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class InicioController extends Controller
      */
     public function index()
     {
-        return view('inicio');
+        $products = Product::inRandomOrder()->take(9)->get();
+        return view('inicio')->with('products', $products);
     }
 
     /**
@@ -44,11 +45,10 @@ class InicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        
     }
-
     /**
      * Show the form for editing the specified resource.
      *

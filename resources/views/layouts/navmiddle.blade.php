@@ -3,7 +3,7 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="{{ asset('img/home/tfire.png') }} " alt="" /></a>
+							<a href="/"><img src="{{ asset('img/home/tfire.png') }} " alt="" /></a>
 						</div>
 					</div>
 					<div class="col-md-8 clearfix">
