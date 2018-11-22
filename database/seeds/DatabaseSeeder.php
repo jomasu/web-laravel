@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //factory(Product::class, 50)->create();
+            factory(Product::class, 50)->create();
 
             Categorie::create([
                 'name' => 'Televisores',

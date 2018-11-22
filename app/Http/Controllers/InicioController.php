@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Categorie;
 
 class InicioController extends Controller
 {
@@ -14,7 +15,10 @@ class InicioController extends Controller
      */
     public function index()
     {
-        return view('inicio');
+        $products = Product::inRandomOrder()->take(9)->get();
+        $categories = Categorie::All();
+        return view('inicio')->with('products', $products)->with('categories',$categories);
+
     }
 
     /**

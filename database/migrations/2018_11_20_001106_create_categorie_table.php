@@ -13,7 +13,7 @@ class CreateCategorieTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorie', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('name')->unique();
             $table->timestamps();

@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken()->nullable($value = true);
             $table->string('role')->nullable($value = true);
             $table->boolean('activate')->nullable($value = true);
-            $table->timestamps()->nullable($value = true);
+            $table->timestamps();
         });
     }
 

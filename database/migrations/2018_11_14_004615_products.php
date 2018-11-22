@@ -27,7 +27,7 @@ class Products extends Migration
             $table->string('photopath_slot3', 100)->nullable($value = true);
             $table->string('photopath_slot4', 100)->nullable($value = true);
             $table->string('photopath_slot5', 100)->nullable($value = true);
-            $table->timestamps()->nullable($value = true);
+            $table->timestamps();
         });
     }
 
