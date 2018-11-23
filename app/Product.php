@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
    
-    public function categories() {
+    public function categorie() {
 
-        return $this->BelongsTo(categories::class);
+        return $this->hasOne(Categorie::class);
     }
 }

@@ -15,8 +15,10 @@ class InicioController extends Controller
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->take(9)->get();
-        $categories = Categorie::All();
+        $products = Product::all();
+        $categories = Categorie::all();
+
+
         return view('inicio')->with('products', $products)->with('categories',$categories);
 
     }

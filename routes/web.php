@@ -11,15 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('inicio');
-});
+Route::get('/', 'InicioController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'ProductController@index');
+//Route::get('/', 'ProductController@index');
 Route::get('/shop', 'ShopController@index')->name('shop');
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 //Route::get('/', 'CategorieController@index');
@@ -28,7 +26,7 @@ Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 
 Route::get('/brand/{$id}','brandController@show')->name('brand');
 Route::get('/agregar', 'addProductController@index')->name('agregar');
-Route::get('/inicio', 'InicioController@index')->name('inicio');
+Route::get('inicio', 'InicioController@index')->name('inicio');
 
 Route::get('images-upload', 'HomeController@imagesUpload');
 Route::post('images-upload', 'HomeController@imagesUploadPost')->name('images.upload');
