@@ -2,6 +2,7 @@
 
 use App\Product;
 use App\Categorie;
+use App\Brand;
 use Illuminate\Database\Seeder;
 
 
@@ -14,9 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-            //factory(Product::class, 50)->create();
+            factory(Product::class, 50)->create();
 
-            Categorie::create([
+            /*Categorie::create([
                 'name' => 'Televisores',
             ]);
 
@@ -41,6 +42,23 @@ class DatabaseSeeder extends Seeder
             Categorie::create([
                 'name' => 'Parlantes',
             ]);         
+*/
+           /* Brand::create([
+                'name' => 'Samsung',
+            ]); 
+            Brand::create([
+                'name' => 'LG',
+            ]); 
+            Brand::create([
+                'name' => 'BHG',
+            ]);
+            Brand::create([
+                'name' => 'HP',
+            ]); 
+            Brand::create([
+                'name' => 'Pionner',
+            ]); */ 
+
 
 
     }

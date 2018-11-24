@@ -10,8 +10,6 @@
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Nosotros</a></li>
-								<li><a href=""><i class="fa fa-star"></i> Mi lista</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Salir</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
 
 							  @if (Route::has('login'))

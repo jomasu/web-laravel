@@ -25,7 +25,7 @@ Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 
 
 Route::get('/brand/{$id}','brandController@show')->name('brand');
-Route::get('/agregar', 'addProductController@index')->name('agregar');
+Route::get('/agregar', 'ProductController@store')->name('agregar');
 Route::get('inicio', 'InicioController@index')->name('inicio');
 
 Route::get('images-upload', 'HomeController@imagesUpload');
