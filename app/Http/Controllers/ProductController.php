@@ -18,6 +18,14 @@ class ProductController extends Controller
         return view('inicio')->with('products', $products);
     }
 
+
+    public function addToCart(Request $request){
+        $request->session()->push('cart.products', [
+            'id' => $request->product_id,
+            'stock' => $request->stock,
+        ]);
+        return redirect()->back();
+    }
     /**
      * Show the form for creating a new resource.
      *

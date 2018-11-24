@@ -57,7 +57,16 @@
 											<img src="{{$product->photopath_slot1}}" alt="" />
 											<h2>${{number_format($product->price,2,',','.')}}</h2>
 											<p>{{$product->name}}</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+
+											<!-- modificado --> <!-- Incorporar Bootstrap-->
+											<form action="{{ route('products.addToCart') }}" method="POST">
+                                				@csrf
+                                				<input type="hidden" name="product_id" value="{{ $product->id }}">
+                                				<input type="stock" name="stock">
+                                				<input type="submit" name="submit" value="Add to cart">
+                            				</form>
+											<!-- modificado -->
+
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">

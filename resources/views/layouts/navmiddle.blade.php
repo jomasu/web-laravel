@@ -10,7 +10,7 @@
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Nosotros</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+								<li><a href="{{ route('cart') }}"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
 
 							  @if (Route::has('login'))
 								  @auth

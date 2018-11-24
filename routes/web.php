@@ -31,3 +31,9 @@ Route::get('inicio', 'InicioController@index')->name('inicio');
 Route::get('images-upload', 'HomeController@imagesUpload');
 Route::post('images-upload', 'HomeController@imagesUploadPost')->name('images.upload');
 
+//Rutas para carrito
+Route::post('products/add', 'ProductController@addToCart')->name('products.addToCart');
+Route::get('/cart', 'CartController@index')->name('cart');
+Route::get('/carrito/{id}/remove', 'CartController@remove')->name('cart.remove');
+Route::get('/carrito/remove', 'CartController@removeAll')->name('cart.removeAll');
+

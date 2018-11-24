@@ -17,7 +17,7 @@
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Productos</a></li>
 										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Carrito</a></li> 
+										<li><a href="{{ route('cart') }}">Carrito</a></li> 
 										<li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 

@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
             factory(Product::class, 50)->create();
 
-            /*Categorie::create([
+            Categorie::create([
                 'name' => 'Televisores',
             ]);
 
@@ -42,8 +42,8 @@ class DatabaseSeeder extends Seeder
             Categorie::create([
                 'name' => 'Parlantes',
             ]);         
-*/
-           /* Brand::create([
+
+            Brand::create([
                 'name' => 'Samsung',
             ]); 
             Brand::create([
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
             ]); 
             Brand::create([
                 'name' => 'Pionner',
-            ]); */ 
+            ]);
 
 
 
