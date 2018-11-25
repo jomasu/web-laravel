@@ -12,8 +12,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        
+        Product::scopeSearch($request->name)->orderBy('id', 'DESC');
         $products = Product::inRandomOrder()->take(9)->get();
         return view('inicio')->with('products', $products);
     }

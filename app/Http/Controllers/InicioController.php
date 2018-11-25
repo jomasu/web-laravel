@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Categorie;
+use App\Brand;
 
 class InicioController extends Controller
 {
@@ -17,9 +18,10 @@ class InicioController extends Controller
     {
         $products = Product::all();
         $categories = Categorie::all();
+        $brands= Brand::all();
 
 
-        return view('inicio')->with('products', $products)->with('categories',$categories);
+        return view('inicio')->with('products', $products)->with('categories',$categories)->with('brands',$brands);
 
     }
 

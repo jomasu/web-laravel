@@ -34,9 +34,12 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Buscar"/>
-						</div>
+					{!!Form::open(['route'=>'layouts.nav','method'=>'GET','class'=>'vavbar-form pull-right'] !!}
+<div class="input-group">
+{!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Buscar','aria-describedby'=>'search])!!}
+<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+</div>
+{!! Form::close() !!}
 					</div>
 				</div>
 			</div>

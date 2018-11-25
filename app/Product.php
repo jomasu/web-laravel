@@ -11,4 +11,14 @@ class Product extends Model
 
         return $this->hasOne(Categorie::class);
     }
+
+    public function brand() {
+
+        return $this->hasOne(Brand::class);
+    }
+
+    public function scopeSearch ($query, $name) 
+    {
+        return $query->where('name', 'LIKE',"%$name%");
+    }
 }
