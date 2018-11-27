@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Product;
+use DB;
 
 class ProductController extends Controller
 {
@@ -89,5 +91,14 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public  function search () 
+    { 
+        $products = Input::get('products');
+        // y aca escribis la query
+ 
+        $producto_buscado = DB::table('products')->where('name', 'LIKE',"%$products%")->get();
+ 
+        return view('resultados')->with('producto_buscado', $producto_buscado);
     }
 }
