@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Product;
 use App\Categorie;
+use App\Brand;
 use DB;
 
 class ProductController extends Controller
@@ -39,9 +40,11 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $categories = Categorie::all();
+        $brands = Brand::all();
         $products = Product::orderBy('id','DESC')->paginate(10);
 
-        return view('agregarproducto')->with('products', $products);
+        return view('agregarproducto')->with('products', $products)->with('categories',$categories)->with('brands',$brands);
     }
 
     /**
@@ -52,12 +55,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         //ver codigo para incluir el path a la base de datos
+       
         //$file = $request->file->store('files', 'public');
-        $product = new Product($request->except('_token'));
-        //$product->photopath1 = $file;
+       
+        
+        $product = new Product($request->all());
+        //$product->photopath_slot1 = $file;
         //($product);
-        //$product->save();
+        dd($product);
+        $product->save();
+        return redirect()->back();
     }
     public  function search () 
     { 

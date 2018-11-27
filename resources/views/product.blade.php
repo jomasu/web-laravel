@@ -60,7 +60,7 @@
                                     <p>{{$product->description}}</p>
                                     <p><b>Availability:</b>En stock</p>
 								    <p><b>Condition:</b> New</p>
-								    <p><b>Brand:</b> E-SHOPPER</p>
+								    <p><b>Brand:</b>T-FIRE</p>
                                    
 								</span>
 								

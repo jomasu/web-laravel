@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = [
-        'photopath_slot1',
-   ];
+    protected $guarded = [];
    
     public function categorie() {
 

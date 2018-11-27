@@ -1,23 +1,23 @@
 $(window).load(function(){
 
     $(function() {
-     $('#file-input').change(function(e) {
+     $('#photopath_slot1').change(function(e) {
          addImage(e); 
         });
 
-    $('#file-input2').change(function(e) {
+    $('#photopath_slot2').change(function(e) {
             addImage2(e); 
            });
            
-    $('#file-input3').change(function(e) {
+    $('#photopath_slot3').change(function(e) {
             addImage3(e); 
            });   
     
-    $('#file-input4').change(function(e) {
+    $('#photopath_slot4').change(function(e) {
             addImage4(e); 
            });
     
-    $('#file-input5').change(function(e) {
+    $('#photopath_slot5').change(function(e) {
             addImage5(e); 
            });                 
 		

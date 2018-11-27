@@ -34,7 +34,7 @@
 											<div class="overlay-content">
 												<h2>${{number_format($product->price,2,',','.')}}</h2>
 												<p>{{$product->name}}</p>
-
+												<p>{{ $product->brand_id}}</p>	
 												{!! Form::open(['route'=>'products.addToCart','method'=>'POST']) !!}	
 												@csrf
 												

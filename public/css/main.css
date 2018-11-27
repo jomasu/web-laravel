@@ -351,7 +351,7 @@ ul.sub-menu {
 }
 
 
-#file-input, #file-input2, #file-input3, #file-input4 , #file-input5 {
+#photopath_slot1, #photopath_slot2, #photopath_slot3, #photopath_slot4 , #photopath_slot5 {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -360,7 +360,7 @@ ul.sub-menu {
     z-index: -1;
     }
 
-label[for="file-input"] {
+label[for="photopath_slot1"] {
 	
         font-size: 14px;
         font-weight: 600;
@@ -1222,7 +1222,7 @@ h2.title {
 
 .view-product img {
     border: 1px solid #F7F7F0;
-    height: 380px;
+    /*height: 380px;*/
     width: 100%;
 }
 
