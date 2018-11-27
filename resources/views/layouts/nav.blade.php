@@ -22,7 +22,7 @@
                                 </li> 
 								
 								<!--<li><a href="404.html">404</a></li>-->
-								<li><a href="contact-us.html">Contacto</a></li>
+								<li><a href="{{route('contacto')}}">Contacto</a></li>
 							</ul>
 						</div>
 					</div>
@@ -31,7 +31,7 @@
 						{{ csrf_field() }}
 							<form action="{{ route('query') }}" method="get">
 								<input type="text"  name="products" placeholder="Buscar"/>
-								<button class="btn btn-submit" >Buscar </button>
+								
 							</form>
 						</div>
 					</div>

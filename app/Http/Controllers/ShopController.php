@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Shop;
 use App\Product;
-use App\categorie;
-use App\brand;
+use App\Categorie;
+use App\Brand;
 
 class ShopController extends Controller
 {

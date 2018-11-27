@@ -31,6 +31,12 @@ Route::post('/agregar/producto', 'ProductController@store')->name('agregar.produ
 Route::get('/products/list', 'ProductController@index')->name('product.list');
 Route::get('/query', 'ProductController@search')->name('query');
 
+Route::get('/contacto','ContactoController@index')->name('contacto');
+Route::post('/contacto/store','ContactoController@store')->name('contacto.store');
+Route::get('/contacto/create','ContactoController@create')->name('contacto.create');
+
+Route::get('/listado','ListaProductController@index')->name('listado.producto');
+
 //Rutas para carrito
 Route::post('productos/add', 'ProductController@addToCart')->name('products.addToCart');
 Route::get('/cart', 'CartController@index')->name('cart');

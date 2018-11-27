@@ -39,7 +39,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('agregarproducto');
+        $products = Product::orderBy('id','DESC')->paginate(10);
+
+        return view('agregarproducto')->with('products', $products);
     }
 
     /**

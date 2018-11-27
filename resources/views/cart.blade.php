@@ -2,7 +2,7 @@
 Incorporar a la vista -->
 @extends('layouts.layout')
 
-@section('title', 'Electronicos y perifericos')
+@section('title', 'Carrito T-fire')
 
 <!--Slider-->
 
@@ -12,13 +12,13 @@ Incorporar a la vista -->
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
+				  <li><a href="/">Home</a></li>
 				  <li class="active">Shopping Cart</li>
 				</ol>
             </div>
             @empty($products) 
             <h1>No hay productos en el carrito</h1>
-            
+            <br><br><br><br>
             @else
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
