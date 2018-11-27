@@ -6,7 +6,8 @@
 
 <div class="container">
 
-<form class="form-group"  action="" method="get">
+<form class="form-group"  action="{{ route('agregar.producto') }}" method="POST">
+  {{ csrf_field() }}
 <div class="col-sm-4 col-sm-offset-1 login-form">
 <h3><i class="fas fa-box-open"></i>&nbsp;Agregar Nuevo Producto</h3>
 
@@ -14,17 +15,16 @@
 	
 <div class="custom-file">
   
-  <input name="file-input" id="file-input" type="file" />
+  <input name="photopath_slot1" value="{{ old("photopath_slot1") }}"id="file-input" type="file" />
   
     <div class="preview-img">
         <img id="imgSalida" width="100%" height="100%" src="" />
     </div>
 	 <br>
-	<label class="custom-file-label" for="file-input"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp; Subir la Imagen Principal</label>	
-	
+  <label class="custom-file-label" for="file-input"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp; Subir la Imagen Principal</label>	
+  
 </div>
 	
-
 @for ($i = 2; $i <= 5; $i++)
 
 <div class="custom-file col-sm-3">
@@ -43,7 +43,7 @@
 <div class="col-sm-4 col-sm-offset-1 login-form">
     <br><br>
 <label class="custom-file-label" for="name_product"><i class="fas fa-edit"></i>&nbsp; Nombre del Producto:&nbsp;</label>	
-<input type="text" name="name_product" id="name_product" placeholder="Elija un nombre" require>
+<input type="text" name="name" id="name_product" placeholder="Elija un nombre" require>
 <br><br>
 <select id="categoria" class="custom-select">
   <option selected>Seleccionar una categoría</option>

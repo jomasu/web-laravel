@@ -35,7 +35,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('agregarproducto');
     }
 
     /**
@@ -46,7 +46,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return view('agregarproducto');
+        //ver codigo para incluir el path a la base de datos
+        //$file = $request->file->store('files', 'public');
+        $product = new Product($request->except('_token'));
+        //$product->photopath1 = $file;
+        //($product);
+        //$product->save();
     }
 
     /**
