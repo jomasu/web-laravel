@@ -6,18 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = [
-        'photopath_slot1',
-   ];
-   
-    public function categorie() {
-
-        return $this->hasOne(Categorie::class);
+    protected $guarded = [];
+    
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
     }
 
-    public function brand() {
-
-        return $this->hasOne(Brand::class);
+    public function categorie(){
+        return $this->belongsTo(Categorie::class);
     }
 
 }

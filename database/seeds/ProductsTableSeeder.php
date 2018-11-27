@@ -18,6 +18,7 @@ class ProductsTableSeeder extends Seeder
         $faker = Faker\Factory::create('es_ES');
         for ($i=0; $i < 50; $i++){
             Product::create([
+                'id' => $faker->numberBetween($min = 1, $max = 800),
                 'name' => $faker->word,
                 'price'=>$faker->numberBetween($min = 1000, $max = 9000),
                 'description'=>$faker->paragraph($nbSentences = 3, $variableNbSentences = true),
@@ -25,6 +26,7 @@ class ProductsTableSeeder extends Seeder
                 'brand_id'=>$faker->numberBetween($min = 1, $max = 8),
                 'categorie_id'=>$faker->numberBetween($min = 1, $max = 8),
                 'photopath_slot1'=>'https://imgplaceholder.com/600x528',
+
                 ]);
 
         }

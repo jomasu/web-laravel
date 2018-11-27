@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Product;
 use App\Categorie;
+use App\Brand;
 use DB;
 
 class ProductController extends Controller
@@ -39,9 +40,10 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $brands = Brand::all();
         $products = Product::orderBy('id','DESC')->paginate(10);
-
-        return view('agregarproducto')->with('products', $products);
+        //dd(Product::find(1));
+        return view('agregarproducto')->with('products', $products)->with('brands', $brands);
     }
 
     /**
@@ -52,9 +54,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->name);
+        //dd($request->all());
         //ver codigo para incluir el path a la base de datos
         //$file = $request->file->store('files', 'public');
-        $product = new Product($request->except('_token'));
+        $product = new Product($request->all());
+        //dd($product);
+        $product->save();
+        return redirect()->back();
         //$product->photopath1 = $file;
         //($product);
         //$product->save();
@@ -78,7 +85,10 @@ class ProductController extends Controller
      */
     public function show()
     {
-        
+        $categories = Categorie::all();
+        $brands = Brand::all();
+        $products = Product::inRandomOrder()->take(9)->get();
+        return view('productlist')->with('products', $products)->with('categories',$categories)->with('brands',$brands);   
     }
     /**
      * Show the form for editing the specified resource.
