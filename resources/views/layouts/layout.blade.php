@@ -31,6 +31,7 @@
 				@include('layouts.menutop')
 				@include('layouts.navmiddle')
 				@include('layouts.nav')
+				
 			</div>
 
 	</header><!--/header-->
@@ -38,6 +39,7 @@
 		@show
 
 		<div>
+		
 			@yield('content')
 		</div>
 

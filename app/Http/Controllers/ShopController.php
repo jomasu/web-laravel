@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Shop;
 use App\Product;
+use App\categorie;
+use App\brand;
 
 class ShopController extends Controller
 {
@@ -15,8 +17,10 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->take(12)->get();
-        return view('shop')->with('products', $products);
+        $categories = Categorie::all();
+        $brands = Brand::all();
+        $products = Product::orderBy('id','DESC')->paginate(9);
+        return view('shop')->with('products', $products)->with('categories',$categories)->with('brands', $brands);
     }
 
     /**
@@ -48,8 +52,10 @@ class ShopController extends Controller
      */
     public function show($id)
     {
+        $categories = Categorie::all();
+        $brands = Brand::all();
         $product = Product::where('id',$id)->firstOrFail();
-        return view('product')->with('product', $product);
+        return view('product')->with('product', $product)->with('categories',$categories)->with('brands', $brands);
     }
 
     /**

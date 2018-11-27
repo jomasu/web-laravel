@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Product;
+use App\Categorie;
+use DB;
 
 class ProductController extends Controller
 {
@@ -14,13 +17,16 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $categories = Categorie::all();
+        $brands = Brand::all();
         $products = Product::inRandomOrder()->take(9)->get();
-        return view('inicio')->with('products', $products);
+        return view('inicio')->with('products', $products)->with('categories',$categories)->with('brands',$brands);
     }
 
 
     public function addToCart(Request $request){
         $request->session()->push('cart.products', [
+            
             'id' => $request->product_id,
             'stock' => $request->stock,
         ]);
@@ -33,7 +39,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('agregarproducto');
     }
 
     /**
@@ -44,8 +50,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return view('agregarproducto');
+        //ver codigo para incluir el path a la base de datos
+        //$file = $request->file->store('files', 'public');
+        $product = new Product($request->except('_token'));
+        //$product->photopath1 = $file;
+        //($product);
+        //$product->save();
     }
+    public  function search () 
+    { 
+        $products = Input::get('products');
+        // y aca escribis la query
+ 
+        $producto_buscado = DB::table('products')->where('name', 'LIKE',"%$products%")->get();
+ 
+        return view('layouts.resultados')->with('producto_buscado', $producto_buscado);
+    }
+
 
     /**
      * Display the specified resource.

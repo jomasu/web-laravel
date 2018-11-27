@@ -9,11 +9,9 @@
 						<div class="single-widget">
 							<h2>Categorías</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Celulares</a></li>
-								<li><a href="#">Notebooks</a></li>
-                                <li><a href="#">Smart TV</a></li>
-                                <li><a href="#">Accesorios</a></li>
-								<li><a href="#">Todas las categorías</a></li>
+								@foreach($categories as $categorie)
+									<li><a href="#">{{ $categorie->name }}</a></li>
+								@endforeach	
 							</ul>
 						</div>
 					</div>
@@ -21,11 +19,9 @@
 						<div class="single-widget">
 							<h2>Marcas</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Asus</a></li>
-								<li><a href="#">Samsung</a></li>
-								<li><a href="#">LG</a></li>
-								<li><a href="#">Sony</a></li>
-								<li><a href="#">Todas las marcas</a></li>
+							@foreach($brands as $brand)
+								<li><a href="#">{{ $brand->name }}</a></li>
+							@endforeach		
 							</ul>
 						</div>
 					</div>
@@ -33,11 +29,10 @@
 						<div class="single-widget">
 							<h2>Servicios</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Tus compras</a></li>
-								<li><a href="#">Ayuda en línea</a></li>
-								<li><a href="#">He tenido un problema</a></li>
-								<li><a href="#">Contáctanos</a></li>
-								<li><a href="#">Ticket System</a></li>
+								<li><a href="#">Carrito</a></li>
+								<li><a href="#">Contactanos</a></li>
+								<li><a href="#">Login</a></li>
+								
 							</ul>
 						</div>
 					</div>
@@ -45,9 +40,9 @@
 						<div class="single-widget">
 							<h2>Sobre nosotros</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">¿Quienes Somos?</a></li>
-								<li><a href="#">Puntos de entrega</a></li>
-								<li><a href="#">Politicas de privacidad</a></li>
+								<li><a href="#">Productos</a></li>
+								<li><a href="#">Marcas</a></li>
+								<li><a href="#">Promociones</a></li>
                                 <li><a href="#">Términos y condiciones</a></li>
                                 <li><a href="#">Trabajá con nosotros</a></li>
 							</ul>
@@ -56,6 +51,8 @@
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
 							<h2>Registrate</h2>
+
+							
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Tu email" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
