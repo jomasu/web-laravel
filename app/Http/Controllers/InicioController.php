@@ -16,7 +16,7 @@ class InicioController extends Controller
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->take(6)->get();
+        $products = Product::orderBy('id', 'DESC')->take(6)->get();
         $categories = Categorie::all();
         $brands = Brand::all();
 

@@ -8,7 +8,7 @@
 <section>
     
     <article>
-        <form class="form-group"  action="{{ route('agregar.producto') }}" method="POST">
+        <form class="form-group"  action="{{ route('agregar.producto') }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <div class="col-sm-4 col-sm-offset-1 login-form">

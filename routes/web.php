@@ -32,7 +32,7 @@ Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 
 Route::get('/products/list', 'ProductController@index')->name('product.list');
 Route::post('/agregar/producto', 'ProductController@store')->name('agregar.producto');
-Route::get('/agregar', 'ProductController@create')->name('agregar');
+Route::get('/agregar', 'ProductController@create')->name('agregar');//->middleware('role:admin');
 Route::get('/products/destroy/{id}', 'ProductController@destroy')->name('products.destroy');
 Route::post('/products/update/{id}', 'ProductController@update')->name('products.update');
 Route::get('/products/show', 'ProductController@show')->name('products.show');
