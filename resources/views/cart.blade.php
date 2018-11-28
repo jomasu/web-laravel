@@ -60,12 +60,10 @@ Incorporar a la vista -->
 								<p class="cart_total_price">{{number_format($product->price)}}</p>
 							</td>
 
-								<form action="{{ route('cart.remove'), $product->id }}" method="GET">
 									<td class="cart_delete">
 										<input type="hidden" name="product-id" value="{{ $product->id }}">
-										<button class="btn btn-default btn-primary btn-block" type="submit">Remove</button>
+										<a href="/carrito/remove/{{$product->id}}"><button class="btn btn-default btn-primary btn-block" type="submit">Remove</button></a>
 									</td>
-								</form>
 
 						</tr>
                         @endforeach

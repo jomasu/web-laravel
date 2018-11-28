@@ -32,7 +32,7 @@ class CartController extends Controller
     //Remover el producto del carrito por id
     public function remove(Request $request, $id){
         
-        $products = collect($request->Session::get('cart.products'));
+        $products = collect($request->Session->get('cart.products'));
         
         $products->filter(function($value, $key) use($id){
             return $value['id'] == $id;
@@ -40,7 +40,7 @@ class CartController extends Controller
         })->keys()->each(function($item) use ($request) {
             $request->session()->forget("cart.products.$item");
         });
-        return redirect()->back();
+        return redirect()->route('cart');
     }
 
 
