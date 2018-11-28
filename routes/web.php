@@ -29,6 +29,7 @@ Route::get('/brand/{$id}','brandController@show')->name('brand');
 Route::get('/agregar', 'ProductController@create')->name('agregar');
 Route::post('/agregar/producto', 'ProductController@store')->name('agregar.producto');
 Route::get('/products/list', 'ProductController@index')->name('product.list');
+Route::get('/products/show', 'ProductController@show')->name('products.show');
 Route::get('/query', 'ProductController@search')->name('query');
 
 Route::get('/contacto','ContactoController@index')->name('contacto');

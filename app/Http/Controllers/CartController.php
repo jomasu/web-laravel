@@ -23,8 +23,9 @@ class CartController extends Controller
             $product->stock = $session_products[$key]['stock'];
             $products[] = $product; 
         }
-
+        
         return view('cart')->with('products', $products)->with('categories',$categories)->with('brands',$brands);
+        
     }
 
 
@@ -49,4 +50,5 @@ class CartController extends Controller
         return redirect()->back();
 
     }
+
 }

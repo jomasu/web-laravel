@@ -64,7 +64,7 @@ class ProductController extends Controller
         $product = new Product($request->all());
         //$product->photopath_slot1 = $file;
         //($product);
-        dd($product);
+        
         $product->save();
         return redirect()->back();
     }
@@ -87,7 +87,10 @@ class ProductController extends Controller
      */
     public function show()
     {
-        
+        $categories = Categorie::all();
+        $brands = Brand::all();
+        $products = Product::inRandomOrder()->take(9)->get();
+        return view('productlist')->with('products', $products)->with('categories',$categories)->with('brands',$brands);  
     }
     /**
      * Show the form for editing the specified resource.

@@ -41,7 +41,10 @@ class DatabaseSeeder extends Seeder
             ]);
             Categorie::create([
                 'name' => 'Parlantes',
-            ]);         
+            ]);
+            Categorie::create([
+                'name' => 'Drones',
+            ]);          
 
             Brand::create([
                 'name' => 'Samsung',
@@ -57,6 +60,9 @@ class DatabaseSeeder extends Seeder
             ]); 
             Brand::create([
                 'name' => 'Pionner',
+            ]);
+            Brand::create([
+                'name' => 'Dell',
             ]);
 
 

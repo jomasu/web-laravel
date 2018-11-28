@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Products extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class Products extends Migration
             $table->string('name');
             $table->float('price');
             $table->integer('stock');
-            $table->integer('brand_id');
+            $table->unsignedInteger('brand_id');
             $table->integer('categorie_id');
             $table->boolean('activate')->nullable($value = true);
             $table->text('description');
@@ -28,6 +28,8 @@ class Products extends Migration
             $table->string('photopath_slot4', 100)->nullable($value = true);
             $table->string('photopath_slot5', 100)->nullable($value = true);
             $table->timestamps();
+
+            //$table->foreign('brand_id')->references('id')->on('brands');
         });
     }
 

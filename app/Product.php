@@ -10,12 +10,12 @@ class Product extends Model
    
     public function categorie() {
 
-        return $this->hasOne(Categorie::class);
+        return $this->belongsTo(Categorie::class);
     }
 
     public function brand() {
 
-        return $this->hasOne(Brand::class);
+        return $this->belongsTo(Brand::class);
     }
 
 }
