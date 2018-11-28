@@ -41,6 +41,6 @@ Route::get('/listado','ListaProductController@index')->name('listado.producto');
 //Rutas para carrito
 Route::post('productos/add', 'ProductController@addToCart')->name('products.addToCart');
 Route::get('/cart', 'CartController@index')->name('cart');
-Route::get('/carrito/{id}/remove', 'CartController@remove')->name('cart.remove');
-Route::get('/carrito/remove', 'CartController@removeAll')->name('cart.removeAll');
+Route::get('/carrito/remove/', 'CartController@remove')->name('cart.remove');
+Route::get('/carrito/removeall', 'CartController@removeAll')->name('cart.removeAll');
 

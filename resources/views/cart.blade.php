@@ -59,9 +59,14 @@ Incorporar a la vista -->
 							<td class="cart_total">
 								<p class="cart_total_price">{{number_format($product->price)}}</p>
 							</td>
-							<td class="cart_delete">
-								<a class="{{ route('cart.remove', $product->id) }}" href=""><i class="fa fa-times"></i></a>
-							</td>
+
+								<form action="{{ route('cart.remove'), $product->id }}" method="GET">
+									<td class="cart_delete">
+										<input type="hidden" name="product-id" value="{{ $product->id }}">
+										<button class="btn btn-default btn-primary btn-block" type="submit">Remove</button>
+									</td>
+								</form>
+
 						</tr>
                         @endforeach
 						
@@ -86,7 +91,7 @@ Incorporar a la vista -->
 							<hr>
 							<p>Total <span>$1000.00</span></p>
 						
-							<a class="btn btn-default btn-primary btn-block" href="">Borrar todo</a>
+							<a class="btn btn-default btn-primary btn-block" href="{{ route('cart.removeAll') }}">Borrar todo</a>
 							<a class="btn btn-default btn-primary btn-block" href="">Finalizar Compra</a>
 					</div>
                 
