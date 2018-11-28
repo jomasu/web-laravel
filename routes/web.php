@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,13 +26,23 @@ Route::post('images-upload', 'HomeController@imagesUploadPost')->name('images.up
 Route::get('/shop', 'ShopController@index')->name('shop');
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 
-Route::get('/brand/{$id}','brandController@show')->name('brand');
+//Route::get('/brand/{$id}','brandController@show')->name('brand');
 
-Route::get('/agregar', 'ProductController@create')->name('agregar');
-Route::post('/agregar/producto', 'ProductController@store')->name('agregar.producto');
+//Route::resource('products', 'ProductController');
+
 Route::get('/products/list', 'ProductController@index')->name('product.list');
+Route::post('/agregar/producto', 'ProductController@store')->name('agregar.producto');
+Route::get('/agregar', 'ProductController@create')->name('agregar');
+Route::get('/products/destroy/{id}', 'ProductController@destroy')->name('products.destroy');
+Route::post('/products/update/{id}', 'ProductController@update')->name('products.update');
 Route::get('/products/show', 'ProductController@show')->name('products.show');
+Route::get('/products/edit/{id}', 'ProductController@edit')->name('products.edit');
+
+
+
 Route::get('/query', 'ProductController@search')->name('query');
+
+
 
 Route::get('/contacto','ContactoController@index')->name('contacto');
 Route::post('/contacto/store','ContactoController@store')->name('contacto.store');

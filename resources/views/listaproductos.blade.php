@@ -15,11 +15,11 @@
                         <section class="row"> 
 
                             <article class="col-md-2 col-12 text-center">
-                                <img src="{{ $product->photopath_slot1 }}" alt="" width="50" >
+                                <a href="/shop/{{$product->id}}"><img src="{{ $product->photopath_slot1 }}" alt="" width="50" ></a>
                             </article> 
 
                             <article class="col-md-3 col-12 text-center">
-                                <strong>{{ $product->name }}</strong>
+                                <strong><a href="/shop/{{$product->id}}">{{ $product->name }}</a></strong>
                             </article>
 
                             <article class="col-md-1 col-2 text-center">
@@ -31,11 +31,11 @@
                             </article>
                         
                             <article class="col-md-2 text-center">
-                                <a class="btn btn-new" href="#">Editar</a>
+                                <a class="btn btn-new" href="/products/edit/{{$product->id}}">Editar</a>
                             </article> 
 
                             <article class="col-md-2  text-center">
-                                <a class="btn btn-new" href="#">borrar</a>
+                                <a class="btn btn-new" href="/products/destroy/{{$product->id}}">Eliminar</a>
                             </article>   
                                 
                         </section>
@@ -43,10 +43,9 @@
                     <hr>
                 @endforeach    
             
+            {{ $products->links() }}
+
             <br><br>
-            <ul class="pagination ">
-				{{$products->render()}}
-			</ul>
 
        
 </article>

@@ -20,8 +20,9 @@ class ProductController extends Controller
     {
         $categories = Categorie::all();
         $brands = Brand::all();
-        $products = Product::inRandomOrder()->take(9)->get();
-        return view('inicio')->with('products', $products)->with('categories',$categories)->with('brands',$brands);
+        $products = Product::orderBy('id', 'ASC')->paginate(15);
+        //$products = Product::inRandomOrder()->take(9)->get();
+        return view('listaproductos')->with('products', $products)->with('categories',$categories)->with('brands',$brands);  
     }
 
 
@@ -89,8 +90,9 @@ class ProductController extends Controller
     {
         $categories = Categorie::all();
         $brands = Brand::all();
-        $products = Product::inRandomOrder()->take(9)->get();
-        return view('productlist')->with('products', $products)->with('categories',$categories)->with('brands',$brands);  
+        $products = Product::orderBy('id', 'ASC')->paginate(15);
+        //$products = Product::inRandomOrder()->take(9)->get();
+        return view('listaproductos')->with('products', $products)->with('categories',$categories)->with('brands',$brands);  
     }
     /**
      * Show the form for editing the specified resource.
@@ -99,8 +101,11 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $categories = Categorie::all();
+        $brands = Brand::all();
+        $products = Product::find($id);
+        return view('editarproducto')->with('products', $products)->with('categories',$categories)->with('brands',$brands);
     }
 
     /**
@@ -112,7 +117,19 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->stock = $request->stock;
+        $product->brand_id = $request->brand_id;
+        $product->categorie_id = $request->categorie_id;
+        $product->description = $request->description;
+        $product->photopath_slot1 = $request->photopath_slot1;
+
+        $product->save();
+        return redirect('/shop/' .$id);
+        
     }
 
     /**
@@ -123,6 +140,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->destroy($id);
+
+        //Flash::error('El producto'. $product->name . 'ha sido eliminado' );
+        return redirect()->route('product.list');
     }
 }
